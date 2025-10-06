@@ -9,11 +9,11 @@ st.set_page_config(page_title="Salary Prediction Model" , page_icon=":robot:")
 
 
 # load model
-with open("model.pickle" , "rb") as file:
+with open("./model.pickle" , "rb") as file:
     model = pickle.load(file)
 
 # load scale
-with open("scale.pickle" , "rb") as file:
+with open("./scale.pickle" , "rb") as file:
     scale = pickle.load(file)
 
 # title
@@ -29,4 +29,5 @@ if st.button("Predict Salary"):
     new_data_scaled = scale.transform(new_data)
     # prediction
     prediction = model.predict(new_data_scaled)
+
     st.success(f"Predicted Salary: {prediction[0]:,.2f}")
