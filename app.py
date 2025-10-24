@@ -1,7 +1,6 @@
 # import libary
 import pandas 
 import pickle
-from sklearn.metrics import r2_score
 import streamlit as st
 
 # set config
@@ -31,3 +30,4 @@ if st.button("Predict Salary"):
     prediction = model.predict(new_data_scaled)
 
     st.success(f"Predicted Salary: {prediction[0]:,.2f}")
+
